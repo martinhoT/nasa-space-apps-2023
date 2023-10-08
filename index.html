@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Everything Starts with Water</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav id="toolbar" class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a id="navbar-intro" class="navbar-brand" href="#"">
+                    <img src="./images/water_cycle_icon.png" alt="[Intro]" width="30" height="24">
+                </a>
+              </li>
+              <li class="nav-item">
+                <a id="navbar-map" class="navbar-brand" href="#"">
+                    <img src="./images/map_icon.png" alt="[Map]" width="30" height="24">
+                </a>
+              </li>
+              <li class="nav-item">
+                <a id="navbar-outro" class="navbar-brand" href="#"">
+                    <img src="./images/curios_icon.png" alt="[Outro]" width="30" height="24">
+                </a>
+              </li>
+            </ul>
+            <div>
+                Everything Starts with Water
+            </div>
+          </div>
+        </div>
+      </nav>
+
+    <div id="introduction" class="page-fill on-top">
+        <div class="container vh-100">
+            <div class="row align-items-center h-75">
+                <div class="col-12">
+                    <h1>
+                        Let's Start at The Beginning
+                    </h1>
+                    <br>
+                    <div style="text-align: left">
+                        <a class="btn btn-primary" data-bs-toggle="collapse" href="#introduction-topic-1" role="button" aria-expanded="false" aria-controls="introduction-topic-1">
+                            How did the oceans come about?
+                        </a>
+                        <div class="collapse" id="introduction-topic-1">
+                            <div class="card card-body">
+                                Scientists have a theory that the first ocean was formed from the escape of water vapor and other gases from the molten rocks of the Earth to the atmosphere surrounding the cooling planet.
+                                <br>
+                                After the Earth's surface had cooled to a temperature below the boiling point of water, rain began to fall—and continued to fall for centuries. As the water drained into the great hollows in the Earth's surface, the primeval ocean came into existence. The forces of gravity prevented the water from leaving the planet.
+                                <br>
+                                There is also another more interesting theory, that says that comets and meteorites that crashed against Earth brought the water to our oceans. Imagine how cool is that!
+                            </div>
+                        </div>
+    
+                        <br>
+                        <br>
+                        <br>
+                        
+                        <a class="btn btn-primary" data-bs-toggle="collapse" href="#introduction-topic-2" role="button" aria-expanded="false" aria-controls="introduction-topic-2">
+                            Why is water so important for us?
+                        </a>
+                        <div class="collapse" id="introduction-topic-2">
+                            <div class="card card-body">
+                                Water is essential to life on Earth. In its three phases (solid, liquid, and gas), water ties together the major parts of the Earth’s climate system — air, clouds, the ocean, lakes, vegetation, snowpacks and glaciers.
+                                <br>
+                                A process called the water cycle is what allows the continuous movement of water within the Earth and atmosphere. It is a complex system that includes many different processes that we’re excited to teach you!
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+            <div class="row aligh-items-center h-25">
+                <div class="col-12">
+                    <button id="introduction-next" type="button" class="btn btn-dark">
+                        Next
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="map" class="page-fill col-12">
+    </div>
+
+    <div id="map-stuff">
+        <div id="clouds" class="page-fill col-12 on-top unselectable clouds masked-clouds">
+        </div>
+    
+        <div id="rain" class="page-fill col-12 on-top unselectable rain masked-rain">
+        </div>
+    
+        <div id="evaporation" class="page-fill col-12 on-top unselectable steam masked-steam">
+        </div>
+
+        <div id="vectors" class="page-fill col-12 on-top unselectable vectors">
+        </div>
+    
+        <div class="page-fill col-12">
+            <div id="stage-description" class="container on-top">
+                <div class="row">
+                    <div id="stage-description-text" class="col-12">
+                        ...
+                    </div>
+                </div>
+            </div>
+            <button id="info" type="button" class="btn btn-dark on-top">
+                Info
+            </button>
+            <div id="timeline" class="on-top">
+                <ul id="timeline-stages">
+                    <li id="timeline-evaporation" class="col-3 timeline-stage">
+                        Evaporation
+                    </li>
+                    <li id="timeline-condensation" class="col-3 timeline-stage">
+                        Condensation
+                    </li>
+                    <li id="timeline-precipitation" class="col-3 timeline-stage">
+                        Precipitation
+                    </li>
+                    <li id="timeline-infiltration" class="col-3 timeline-stage">
+                        Collection
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="outro" class="page-fill">
+        <div class="container vh-100">
+            <div class="row h-75 overflow-scroll" style="text-align: left">
+                <div class="col-12">
+                    <br>
+                    
+                    <h1>
+                        The global and ocean temperatures are rising
+                    </h1>
+
+                    <br>
+
+                    <ul>
+                        <li>
+                            The ice sheets, snow cover, and artic sea ice are decreasing.
+                        </li>
+                        <li>
+                            The sea level is rising.
+                        </li>
+                        <li>
+                            The ocean is becoming more acidic.
+                        </li>
+                    </ul>
+
+                    <br>
+
+                    <h1>
+                        The solutions
+                    </h1>
+
+                    <br> 
+
+                    <p style="text-indent: 30px">
+                        We can stop things from getting worse!
+                    </p>
+                        
+                    <br>
+                    <br>
+
+                    <a class="btn btn-primary" data-bs-toggle="collapse" href="#outro-topic-1" role="button" aria-expanded="false" aria-controls="outro-topic-1">
+                        Reduce pollution
+                    </a>
+                    <div class="collapse" id="outro-topic-1">
+                        <div class="card card-body">
+                            Sea levels are rising because of pollution from things like cars and factories. These pollutions make the Earth warmer, which melts ice and makes the sea level go up.
+                        </div>
+                    </div>
+
+                    <br>
+                    <br>
+                    <br>
+
+                    <a class="btn btn-primary" data-bs-toggle="collapse" href="#outro-topic-2" role="button" aria-expanded="false" aria-controls="outro-topic-2">
+                        Use clean energy
+                    </a>
+                    <div class="collapse" id="outro-topic-2">
+                        <div class="card card-body">
+                            Instead of using things like coal and oil, which make lots of pollution, we can use clean energy like the sun and the wind to make electricity.
+                        </div>
+                    </div>
+
+                    <br>
+                    <br>
+                    <br>
+
+                    <a class="btn btn-primary" data-bs-toggle="collapse" href="#outro-topic-3" role="button" aria-expanded="false" aria-controls="outro-topic-3">
+                        Save energy
+                    </a>
+                    <div class="collapse" id="outro-topic-3">
+                        <div class="card card-body">
+                            We use less energy, we produce less pollution.
+                        </div>
+                    </div>
+
+                    <br>
+                    <br>
+                    <br>
+
+                    <a class="btn btn-primary" data-bs-toggle="collapse" href="#outro-topic-4" role="button" aria-expanded="false" aria-controls="outro-topic-4">
+                        Plant trees
+                    </a>
+                    <div class="collapse" id="outro-topic-4">
+                        <div class="card card-body">
+                            Trees are like nature's cleaners. They absorb carbon dioxide, which is a gas that makes the Earth warmer when there's too much of it in the air.
+                        </div>
+                    </div>
+
+                    <br>
+                    <br>
+                    <br>
+
+                    <a class="btn btn-primary" data-bs-toggle="collapse" href="#outro-topic-5" role="button" aria-expanded="false" aria-controls="outro-topic-5">
+                        Recycle and reduce waste
+                    </a>
+                    <div class="collapse" id="outro-topic-5">
+                        <div class="card card-body">
+                            When we recycle our trash and use less plastic, we reduce the amount of garbage that ends up in the ocean.
+                        </div>
+                    </div>
+
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+                    <h4 style="text-align: center">
+                        Remember, even small actions can add up to a big impact. So, by doing these things, we can help protect our planet.
+                    </h4>
+                </div>
+            </div>
+
+            <br>
+            <br>
+
+            <div class="row aligh-items-center">
+                <div class="col-12">
+                    <button id="outro-back" type="button" class="btn btn-dark">
+                        Back
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+	<script src="rivers.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
